@@ -1,0 +1,34 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Tensorflow Docker Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/"
+
+paths:
+  /survival_probability:
+    post:
+      operationId: "prediction.post"
+      tags:
+        - "Prediction"
+      summary: "The prediction data structure provided by the server application"
+      description: "Retrieve the chance of surviving the titanic disaster"
+      parameters:
+        - in: body
+          name: attributes
+          required: true
+          schema:
+            $ref: '#/definitions/PredictionPost'
+      responses:
+        '201':
+          description: 'Survival probability of an individual Titanic passenger'
+
+definitions:
+  PredictionPost:
+    type: object
+

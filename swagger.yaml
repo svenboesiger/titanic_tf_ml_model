@@ -20,7 +20,7 @@ paths:
       description: "Retrieve the chance of surviving the titanic disaster"
       parameters:
         - in: body
-          name: attributes
+          name: passenger
           required: true
           schema:
             $ref: '#/definitions/PredictionPost'

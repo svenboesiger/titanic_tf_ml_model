@@ -23,11 +23,11 @@ def initialize_classifier():
         n_classes=2)
 
 
-def post(passengar):
+def post(passenger):
     if classifier is None:
         initialize_classifier()
 
-    input_data = pd.DataFrame.from_records([passengar['attributes']])
+    input_data = pd.DataFrame.from_records([passenger['attributes']])
     predictions = classifier.predict(input_fn=tf.estimator.inputs.pandas_input_fn(
         x=input_data,
         shuffle=False))
